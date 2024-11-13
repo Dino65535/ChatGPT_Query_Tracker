@@ -23,7 +23,7 @@ const createFloatingPanel = () => {
     const panel = document.createElement("div");
     panel.id = "gpt-extension-panel";
     panel.style.position = "fixed";
-    panel.style.top = "55px";
+    panel.style.top = "59px";
     panel.style.right = "15px";
     panel.style.backgroundColor = "white";  // 保持背景顏色為白色
     panel.style.border = "1px solid #ccc";  // 保持邊框顏色為灰色
@@ -160,8 +160,8 @@ const checkForNewChat = () => {
     if (window.location.href !== currentUrl) {
         currentUrl = window.location.href;
         previousQuestions.clear();
-        const questionContainer = document.getElementById("question-container");
-        questionContainer.innerHTML = ""; // 清除問題列表
+        let questionContainer = document.getElementById("question-container");
+        questionContainer.innerHTML = " "; // 清除問題列表
 
         if (isChatPage(currentUrl)) {
             // 延遲創建浮動面板，以確保問題列表被清空
