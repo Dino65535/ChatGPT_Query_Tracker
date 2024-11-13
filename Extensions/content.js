@@ -161,7 +161,9 @@ const checkForNewChat = () => {
         currentUrl = window.location.href;
         previousQuestions.clear();
         let questionContainer = document.getElementById("question-container");
-        questionContainer.innerHTML = " "; // 清除問題列表
+        if (questionContainer) {
+            questionContainer.innerHTML = ""; // Clear the question list safely
+        }
 
         if (isChatPage(currentUrl)) {
             // 延遲創建浮動面板，以確保問題列表被清空
